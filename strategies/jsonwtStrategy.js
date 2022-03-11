@@ -11,7 +11,7 @@ opts.secretOrKey = myKey.secret;
 
 module.exports = passport => {
   passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    Person.findOne({id: jwt_payload.id})
+    Person.findById(jwt_payload.id)
       .then((person) => {
         if(person) {
           return done(null, person)
