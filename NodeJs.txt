@@ -1,0 +1,33 @@
+Resources
+
+  NodeJs : https://nodejs.org/docs/latest-v10.x/api/
+
+  ExpressJs : https://expressjs.com/en/4x/api.html#express
+
+  body-parser: https://www.npmjs.com/package/body-parser
+
+  multer : https://www.npmjs.com/package/multer
+
+  passport : https://www.npmjs.com/package/passport
+
+  passport-jwt : https://www.npmjs.com/package/passport-jwt
+
+  jsonwebtoken : https://www.npmjs.com/package/jsonwebtoken
+
+  bcrypt.js : https://www.npmjs.com/package/bcrypt
+
+  mongoose : https://www.npmjs.com/package/mongoose
+
+  validator : https://www.npmjs.com/package/validator
+
+
+
+Exercise Files
+
+  https://github.com/hiteshchoudhary/BackEndNodeJS
+
+Command to create a package.json file
+
+  npm init
+
+
