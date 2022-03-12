@@ -63,7 +63,8 @@ router.post('/login', (req, res) => {
       if (!person) {
         return res.status(404).json({ emailerror: "user not found with this email" })
       }
-      bcrypt.compare(password, person.password)
+      bcrypt
+        .compare(password, person.password)
         .then(isCorrect => {
           if (isCorrect) {
             // res.json({success: "login success"})
@@ -77,11 +78,12 @@ router.post('/login', (req, res) => {
             jsonwt.sign(
               payload,
               key.secret,
-              { expriresIn: 3600 },
+              { expiresIn: 3600 },
               (err, token) => {
-                res.json({ 
+                if (err) console.log(err)
+                res.json({
                   success: true,
-                  token: "Bearer "+ token
+                  token: "Bearer " + token
                 })
               }
             )
@@ -100,9 +102,8 @@ router.post('/login', (req, res) => {
 // @route  /api/auth/profile
 // @desc   route for user pofile
 // @access PRIVATE
-
-router.get('/profile', passport.authenticate('jwt',{session: false}), (req, res) => {
-  // console.log(req)
+router.get('/profile', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log(req)
 
   res.json({
     id: req.user.id,
